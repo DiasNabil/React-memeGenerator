@@ -1,0 +1,43 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+
+.form{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80vw;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+.input{
+    width: 45%;
+    height: 7vh;
+    font-family: 'karla';
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+
+.btn{
+    width: 100%;
+    height: 7vh;
+    margin-top: 2rem;
+    background: rgb(103,34,128);
+    background: linear-gradient(246deg, rgba(103,34,128,1) 0%, rgba(166,38,211,0.8913690476190477) 79%);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'karla';
+    font-size: 16px;
+    cursor: pointer;
+}
+
+img{
+    width: 40%;
+}
