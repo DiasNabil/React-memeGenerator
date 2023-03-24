@@ -1,19 +1,25 @@
 import React from 'react'
-import memeData from '../memeData'
 import _ from 'lodash'
 import './Form.css'
 
 export default function Form() {
-    function randomMeme() {
-        return allMemeImages.data.memes[_.random(0,99)].url
-    } 
 
-    const [allMemeImages, setAllMemeImages] = React.useState(memeData)
+    React.useEffect(()=>{
+        fetch("https://api.imgflip.com/get_memes")
+        .then(res => res.json())
+        .then(data => setAllMemeImages(data.data.memes))
+    }, []) 
+
+    const [allMemeImages, setAllMemeImages] = React.useState([])
+
+    function randomMeme() {
+        return allMemeImages[_.random(0,99)].url
+    } 
 
     const [memeImage, setMeme]= React.useState({
         topText: '',
         bottomText: '',
-        randomImage: randomMeme()
+        randomImage: "https://i.imgflip.com/54hjww.jpg"
     })
 
     function generateMeme(){
